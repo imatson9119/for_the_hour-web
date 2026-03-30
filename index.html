@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For The Hour — Premium Tinned European Olives</title>
+    <meta
+      name="description"
+      content="Single-varietal European olives in beautifully designed tins. Inspired by the aperitivo tradition. Arriving 2026."
+    />
+    <meta
+      property="og:title"
+      content="For The Hour — Premium Tinned European Olives"
+    />
+    <meta
+      property="og:description"
+      content="Single-varietal European olives in beautifully designed tins. Arriving 2026."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --linen: #f5efe0;
+        --terracotta: #b8543a;
+        --olive-green: #556b47;
+        --gold: #c9a84c;
+        --cream: #f0e8d8;
+        --warm-dark: #2c2418;
+        --mustard: #d4a843;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Cormorant Garamond', 'Georgia', serif;
+        background-color: var(--linen);
+        color: var(--warm-dark);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      /* Terracotta masthead band */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: var(--terracotta);
+        z-index: 100;
+      }
+
+      /* SVG noise grain overlay */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 99;
+        opacity: 0.035;
+        filter: url(#grain);
+        background: repeating-conic-gradient(
+            var(--warm-dark) 0% 25%,
+            transparent 0% 50%
+          )
+          0 0 / 2px 2px;
+      }
+
+      .grain-svg {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+
+      .page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 24px 40px;
+        text-align: center;
+      }
+
+      /* ———— Staggered fade-in animations ———— */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      }
+
+      .reveal-1 {
+        animation-delay: 0.1s;
+      }
+      .reveal-2 {
+        animation-delay: 0.3s;
+      }
+      .reveal-3 {
+        animation-delay: 0.5s;
+      }
+      .reveal-4 {
+        animation-delay: 0.75s;
+      }
+      .reveal-5 {
+        animation-delay: 0.95s;
+      }
+      .reveal-6 {
+        animation-delay: 1.1s;
+      }
+
+      /* ———— Decorative rule ———— */
+      .rule {
+        display: block;
+        width: 38%;
+        max-width: 200px;
+        height: 1px;
+        background-color: var(--terracotta);
+        border: none;
+        margin: 0 auto;
+        opacity: 0.5;
+      }
+
+      /* ———— Hero section ———— */
+      .brand-name {
+        font-family: 'Playfair Display', 'Georgia', serif;
+        font-weight: 900;
+        font-size: 2.2rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        line-height: 1.15;
+        margin: 16px 0;
+        color: var(--warm-dark);
+      }
+
+      .tagline {
+        font-family: 'Cormorant Garamond', 'Georgia', serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: var(--warm-dark);
+        opacity: 0.8;
+        margin-top: 8px;
+        line-height: 1.5;
+      }
+
+      .star {
+        display: block;
+        margin: 28px auto 32px;
+        font-size: 1rem;
+        color: var(--gold);
+        letter-spacing: 0.6em;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        box-shadow:
+          0 8px 40px rgba(44, 36, 24, 0.12),
+          0 2px 12px rgba(44, 36, 24, 0.06);
+      }
+
+      /* ———— Brand description ———— */
+      .description {
+        max-width: 580px;
+        margin: 72px auto 0;
+        font-size: 1.15rem;
+        line-height: 1.75;
+        color: var(--warm-dark);
+        opacity: 0.85;
+      }
+
+      /* ———— Arriving / CTA section ———— */
+      .arriving-section {
+        margin-top: 72px;
+      }
+
+      .arriving {
+        font-family: 'Playfair Display', 'Georgia', serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--warm-dark);
+        margin: 14px 0;
+      }
+
+      /* ———— Email form ———— */
+      .form-wrap {
+        margin-top: 36px;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .signup-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .signup-form input[type='email'] {
+        font-family: 'Cormorant Garamond', 'Georgia', serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--warm-dark);
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--terracotta);
+        padding: 10px 4px;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .signup-form input[type='email']::placeholder {
+        color: var(--warm-dark);
+        opacity: 0.4;
+      }
+
+      .signup-form input[type='email']:focus {
+        border-bottom-color: var(--olive-green);
+      }
+
+      .signup-form button {
+        font-family: 'Cormorant Garamond', 'Georgia', serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--cream);
+        background-color: var(--terracotta);
+        border: none;
+        padding: 12px 32px;
+        cursor: pointer;
+        transition:
+          background-color 0.3s ease,
+          transform 0.2s ease;
+        min-height: 44px;
+      }
+
+      .signup-form button:hover {
+        background-color: var(--olive-green);
+      }
+
+      .signup-form button:active {
+        transform: scale(0.97);
+      }
+
+      .form-success {
+        font-family: 'Cormorant Garamond', 'Georgia', serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--olive-green);
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
+      }
+
+      .form-error {
+        font-family: 'Cormorant Garamond', 'Georgia', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--terracotta);
+        margin-top: 12px;
+      }
+
+      /* ———— Footer ———— */
+      footer {
+        margin-top: 80px;
+        padding-top: 24px;
+        border-top: 1px solid var(--terracotta);
+        opacity: 0.55;
+        font-size: 0.85rem;
+        line-height: 1.8;
+      }
+
+      footer a {
+        color: var(--warm-dark);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      footer a:hover {
+        opacity: 0.7;
+      }
+
+      /* ———— Responsive: desktop ———— */
+      @media (min-width: 768px) {
+        .page {
+          padding: 80px 40px 60px;
+        }
+
+        .brand-name {
+          font-size: 3.4rem;
+          letter-spacing: 0.26em;
+          margin: 20px 0;
+        }
+
+        .tagline {
+          font-size: 1.3rem;
+        }
+
+        .star {
+          margin: 36px auto 40px;
+          font-size: 1.1rem;
+        }
+
+        .description {
+          font-size: 1.25rem;
+          margin-top: 88px;
+        }
+
+        .arriving-section {
+          margin-top: 88px;
+        }
+
+        .arriving {
+          font-size: 1.75rem;
+        }
+
+        .signup-form {
+          flex-direction: row;
+          gap: 0;
+        }
+
+        .signup-form input[type='email'] {
+          flex: 1;
+          font-size: 1.1rem;
+        }
+
+        .signup-form button {
+          flex-shrink: 0;
+          margin-left: 16px;
+        }
+
+        footer {
+          margin-top: 100px;
+        }
+      }
+
+      /* Large desktop refinement */
+      @media (min-width: 1080px) {
+        .brand-name {
+          font-size: 3.8rem;
+        }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          animation: none;
+          opacity: 1;
+        }
+        .form-success {
+          animation: none;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SVG filter for background grain texture -->
+    <svg class="grain-svg" aria-hidden="true">
+      <filter id="grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+    </svg>
+
+    <main class="page">
+      <!-- ———— Hero / Above the Fold ———— -->
+      <header>
+        <hr class="rule reveal reveal-1" aria-hidden="true" />
+        <h1 class="brand-name reveal reveal-1">For The Hour</h1>
+        <hr class="rule reveal reveal-1" aria-hidden="true" />
+        <p class="tagline reveal reveal-2">
+          Single-varietal European olives. For the hour that matters.
+        </p>
+      </header>
+
+      <div class="star reveal reveal-2" aria-hidden="true">✦&ensp;✦&ensp;✦</div>
+
+      <!-- HERO IMAGE: Update src to match your image filename -->
+      <img
+        src="hero.png"
+        alt="A gold tin of For The Hour Castelvetrano olives on a sun-warmed stone ledge, beside a vermouth cocktail and a small bowl of olives, with an Italian hilltop town in the soft golden-hour background."
+        class="hero-image reveal reveal-3"
+        width="1024"
+        height="512"
+      />
+
+      <!-- ———— Brand Description ———— -->
+      <p class="description reveal reveal-4">
+        For The Hour brings single-varietal European
+        olives&hairsp;&mdash;&hairsp;Castelvetrano, Gordal, Lucques,
+        Arbequina&hairsp;&mdash;&hairsp;to the American table in beautifully
+        designed tins. Inspired by the aperitivo tradition, each tin is sourced
+        from a single growing region and packed in small batches. This is the
+        olive, elevated.
+      </p>
+
+      <!-- ———— Arriving 2026 + Email Capture ———— -->
+      <section class="arriving-section reveal reveal-5">
+        <hr class="rule" aria-hidden="true" />
+        <p class="arriving">Arriving 2026</p>
+        <hr class="rule" aria-hidden="true" />
+
+        <div class="form-wrap" id="form-container">
+          <!-- FORMSPREE: Replace YOUR_FORM_ID with your Formspree form ID -->
+          <form
+            class="signup-form"
+            id="signup-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+              aria-label="Email address"
+            />
+            <button type="submit">Notify Me</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ———— Footer ———— -->
+      <footer class="reveal reveal-6">
+        <!-- CONTACT EMAIL: Update email address if desired -->
+        <p>
+          &copy; 2026 For The Hour&ensp;&middot;&ensp;<a
+            href="mailto:hello@forthehour.com"
+            >hello@forthehour.com</a
+          >
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var form = document.getElementById('signup-form');
+        var container = document.getElementById('form-container');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var data = new FormData(form);
+          var button = form.querySelector('button');
+          button.textContent = 'Sending\u2026';
+          button.disabled = true;
+
+          fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { Accept: 'application/json' },
+          })
+            .then(function (response) {
+              if (response.ok) {
+                container.innerHTML =
+                  '<p class="form-success">You\u2019re on the list. We\u2019ll be in touch before the first tin ships.</p>';
+              } else {
+                throw new Error('Form submission failed');
+              }
+            })
+            .catch(function () {
+              button.textContent = 'Notify Me';
+              button.disabled = false;
+              if (!container.querySelector('.form-error')) {
+                var err = document.createElement('p');
+                err.className = 'form-error';
+                err.textContent = 'Something went wrong. Please try again.';
+                form.appendChild(err);
+              }
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
