@@ -3,24 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For The Hour — Premium Tinned European Olives</title>
+    <title>For The Hour — Premium Tinned Olives, Arriving 2026</title>
     <meta
       name="description"
-      content="Single-varietal European olives in beautifully designed tins. Inspired by the aperitivo tradition. Arriving 2026."
+      content="Single-varietal European olives in beautifully designed tins. Castelvetrano, Gordal, Lucques, and more — sourced from the finest growing regions in Spain, Italy, and Greece. Coming soon."
     />
-    <meta
-      property="og:title"
-      content="For The Hour — Premium Tinned European Olives"
-    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://forthehour.com/" />
+
+    <!-- ═══════════════════════════════════
+     OPEN GRAPH (Facebook, LinkedIn,
+     WhatsApp, iMessage previews)
+     ═══════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="For The Hour" />
+    <meta property="og:title" content="For The Hour — Premium Tinned Olives" />
     <meta
       property="og:description"
-      content="Single-varietal European olives in beautifully designed tins. Arriving 2026."
+      content="Single-varietal European olives in beautifully designed tins. Sourced from Spain, Italy, and Greece. Arriving 2026."
     />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://forthehour.com/" />
+    <meta property="og:image" content="https://forthehour.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="For The Hour tinned olives — a gold sardine-format tin on a stone ledge at golden hour"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ═══════════════════════════════════
+     TWITTER / X CARD
+     ═══════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="For The Hour — Premium Tinned Olives" />
+    <meta
+      name="twitter:description"
+      content="Single-varietal European olives in beautifully designed tins. Sourced from Spain, Italy, and Greece. Arriving 2026."
+    />
+    <meta name="twitter:image" content="https://forthehour.com/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="For The Hour tinned olives — a gold sardine-format tin on a stone ledge at golden hour"
+    />
+
+    <!-- ═══════════════════════════════════
+     FAVICON
+     ═══════════════════════════════════ -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- 180×180 -->
+
+    <!-- ═══════════════════════════════════
+     THEME / MOBILE CHROME
+     ═══════════════════════════════════ -->
+    <meta name="theme-color" content="#111111" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -32,76 +74,314 @@
         box-sizing: border-box;
       }
 
-      :root {
-        --linen: #f5efe0;
-        --terracotta: #b8543a;
-        --olive-green: #556b47;
-        --gold: #c9a84c;
-        --cream: #f0e8d8;
-        --warm-dark: #2c2418;
-        --mustard: #d4a843;
-      }
-
-      html {
-        scroll-behavior: smooth;
+      html,
+      body {
+        height: 100%;
       }
 
       body {
-        font-family: 'Cormorant Garamond', 'Georgia', serif;
-        background-color: var(--linen);
-        color: var(--warm-dark);
-        line-height: 1.6;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        background: #111;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
       }
 
-      /* Terracotta masthead band */
-      body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background-color: var(--terracotta);
-        z-index: 100;
+      /* ——————————————————————————————————————
+         Layer 1 — Metallic Silver (tin body)
+         Near-white center → dark-gray edges.
+         Each rim side darkened independently.
+         —————————————————————————————————————— */
+
+      .tin {
+        position: relative;
+        width: min(90vw, 720px, calc(90vh * 1.5));
+        aspect-ratio: 3 / 2;
+        padding: clamp(3px, 0.7%, 7px);
+        border-radius: 10% / 18%;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(90, 85, 78, 0.38) 0%,
+            rgba(120, 115, 108, 0.1) 22%,
+            transparent 44%
+          ),
+          linear-gradient(
+            0deg,
+            rgba(90, 85, 78, 0.32) 0%,
+            rgba(120, 115, 108, 0.08) 20%,
+            transparent 40%
+          ),
+          linear-gradient(90deg, rgba(90, 85, 78, 0.28) 0%, transparent 22%),
+          linear-gradient(270deg, rgba(90, 85, 78, 0.28) 0%, transparent 22%),
+          linear-gradient(
+            135deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.15) 38%,
+            rgba(255, 255, 255, 0.25) 45%,
+            rgba(255, 255, 255, 0.15) 52%,
+            transparent 100%
+          ),
+          radial-gradient(
+            ellipse 65% 56% at 50% 42%,
+            #fafaf8 0%,
+            #f2f0ec 12%,
+            #e8e5e0 28%,
+            #dbd7d0 45%,
+            #ccc7be 64%,
+            #bdb7ad 82%,
+            #b0a99e 100%
+          );
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.35),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+          0 14px 52px rgba(0, 0, 0, 0.55),
+          0 4px 14px rgba(0, 0, 0, 0.3),
+          0 0 90px rgba(200, 200, 200, 0.05);
+        opacity: 0;
+        animation: tinReveal 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
       }
 
-      /* SVG noise grain overlay */
-      body::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 99;
-        opacity: 0.035;
-        filter: url(#grain);
-        background: repeating-conic-gradient(
-            var(--warm-dark) 0% 25%,
-            transparent 0% 50%
-          )
-          0 0 / 2px 2px;
+      /* ——————————————————————————————————————
+         Layer 2 — Terracotta Border Ring
+         —————————————————————————————————————— */
+
+      .tin-border {
+        width: 100%;
+        height: 100%;
+        padding: clamp(7px, 1.8%, 16px);
+        border-radius: 9% / 17%;
+        background: #c4533a;
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
       }
 
-      .grain-svg {
+      /* ——————————————————————————————————————
+         Layer 3 — Cream Interior (label)
+         —————————————————————————————————————— */
+
+      .tin-label {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 8% / 15%;
+        background: #f6efdd;
+        overflow: hidden;
+      }
+
+      /* ——————————————————————————————————————
+         Pull Tab — no animation, appears with
+         the tin. Sized to overlap the banner
+         image like the real product.
+         —————————————————————————————————————— */
+
+      .pull-tab {
         position: absolute;
-        width: 0;
-        height: 0;
+        left: clamp(8px, 2.1%, 20px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: clamp(70px, 22%, 165px);
+        z-index: 2;
       }
 
-      .page {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 60px 24px 40px;
+      .pull-tab img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.35));
+      }
+
+      /* ——————————————————————————————————————
+         Label Content
+         —————————————————————————————————————— */
+
+      .label-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
+        padding: clamp(6px, 2%, 16px);
       }
 
-      /* ———— Staggered fade-in animations ———— */
-      @keyframes fadeUp {
+      .brand-name {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 600;
+        font-size: clamp(1.6rem, 5.3vw, 3.2rem);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #1a1008;
+        line-height: 1.1;
+        margin-bottom: 0;
+        opacity: 0;
+        animation: fadeDown 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.7s forwards;
+      }
+
+      /* Middle Zone — Olive Art */
+
+      .olive-art {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 0;
+        padding: 0;
+        width: 100%;
+        opacity: 0;
+        animation: fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) 1s forwards;
+      }
+
+      .olive-art img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      /* Bottom Zone */
+
+      .bottom-zone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        opacity: 0;
+        animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 1.3s forwards;
+      }
+
+      .subtitle {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(0.6rem, 1.4vw, 0.85rem);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #1a1008;
+        margin-bottom: 2px;
+      }
+
+      .arriving {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(0.75rem, 1.6vw, 1rem);
+        color: #c4533a;
+        margin-bottom: 10px;
+      }
+
+      /* ——————————————————————————————————————
+         Email Form
+         —————————————————————————————————————— */
+
+      .signup-form {
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+      }
+
+      .signup-form input[type='email'] {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-size: clamp(0.75rem, 1.3vw, 0.92rem);
+        color: #1a1008;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(26, 16, 8, 0.3);
+        padding: 4px 2px;
+        width: clamp(130px, 20vw, 220px);
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .signup-form input[type='email']::placeholder {
+        color: #1a1008;
+        opacity: 0.35;
+      }
+
+      .signup-form input[type='email']:focus {
+        border-bottom-color: #c4533a;
+      }
+
+      .signup-form button {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(0.58rem, 1vw, 0.72rem);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #f6efdd;
+        background: #1a1008;
+        border: none;
+        padding: 7px 16px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition:
+          background-color 0.3s ease,
+          transform 0.15s ease;
+      }
+
+      .signup-form button:hover {
+        background: #c4533a;
+      }
+
+      .signup-form button:active {
+        transform: scale(0.97);
+      }
+
+      .snackbar {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-size: clamp(0.82rem, 1.4vw, 1rem);
+        padding: 14px 28px;
+        border-radius: 6px 6px 0 0;
+        box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25);
+        z-index: 1000;
+        pointer-events: none;
+        opacity: 0;
+        transition:
+          transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+          opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .snackbar.visible {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+
+      .snackbar.success {
+        background: #1a1008;
+        color: #f6efdd;
+      }
+
+      .snackbar.error {
+        background: #c4533a;
+        color: #f6efdd;
+      }
+
+      /* ——————————————————————————————————————
+         Keyframe Animations
+         —————————————————————————————————————— */
+
+      @keyframes tinReveal {
         from {
           opacity: 0;
-          transform: translateY(14px);
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
         }
         to {
           opacity: 1;
@@ -109,374 +389,205 @@
         }
       }
 
-      .reveal {
-        opacity: 0;
-        animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
-      .reveal-1 {
-        animation-delay: 0.1s;
-      }
-      .reveal-2 {
-        animation-delay: 0.3s;
-      }
-      .reveal-3 {
-        animation-delay: 0.5s;
-      }
-      .reveal-4 {
-        animation-delay: 0.75s;
-      }
-      .reveal-5 {
-        animation-delay: 0.95s;
-      }
-      .reveal-6 {
-        animation-delay: 1.1s;
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
-      /* ———— Decorative rule ———— */
-      .rule {
-        display: block;
-        width: 38%;
-        max-width: 200px;
-        height: 1px;
-        background-color: var(--terracotta);
-        border: none;
-        margin: 0 auto;
-        opacity: 0.5;
-      }
+      /* ——————————————————————————————————————
+         Portrait Orientation
+         —————————————————————————————————————— */
 
-      /* ———— Hero section ———— */
-      .brand-name {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-weight: 900;
-        font-size: 2.2rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        line-height: 1.15;
-        margin: 16px 0;
-        color: var(--warm-dark);
-      }
+      @media (orientation: portrait) {
+        .tin {
+          width: min(88vw, 440px, calc(92vh * 0.667));
+          aspect-ratio: 2 / 3;
+          border-radius: 18% / 10%;
+        }
 
-      .tagline {
-        font-family: 'Cormorant Garamond', 'Georgia', serif;
-        font-style: italic;
-        font-size: 1.15rem;
-        font-weight: 400;
-        color: var(--warm-dark);
-        opacity: 0.8;
-        margin-top: 8px;
-        line-height: 1.5;
-      }
+        .tin-border {
+          border-radius: 17% / 9%;
+          padding: clamp(10px, 3.5%, 24px);
+        }
 
-      .star {
-        display: block;
-        margin: 28px auto 32px;
-        font-size: 1rem;
-        color: var(--gold);
-        letter-spacing: 0.6em;
-      }
+        .tin-label {
+          border-radius: 15% / 8%;
+        }
 
-      .hero-image {
-        width: 100%;
-        max-width: 900px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        border-radius: 4px;
-        box-shadow:
-          0 8px 40px rgba(44, 36, 24, 0.12),
-          0 2px 12px rgba(44, 36, 24, 0.06);
-      }
+        .pull-tab {
+          left: 50%;
+          top: clamp(22px, 5%, 38px);
+          transform: translateX(-50%);
+          width: clamp(75px, 28%, 140px);
+        }
 
-      /* ———— Brand description ———— */
-      .description {
-        max-width: 580px;
-        margin: 72px auto 0;
-        font-size: 1.15rem;
-        line-height: 1.75;
-        color: var(--warm-dark);
-        opacity: 0.85;
-      }
+        .pull-tab img {
+          transform: rotate(90deg);
+        }
 
-      /* ———— Arriving / CTA section ———— */
-      .arriving-section {
-        margin-top: 72px;
-      }
+        .label-content {
+          justify-content: flex-start;
+          padding-top: 10rem;
+        }
 
-      .arriving {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-weight: 700;
-        font-size: 1.5rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--warm-dark);
-        margin: 14px 0;
-      }
+        @media (max-width: 350px) {
+          .label-content {
+            justify-content: flex-start;
+            padding-top: 7rem;
+          }
+        }
 
-      /* ———— Email form ———— */
-      .form-wrap {
-        margin-top: 36px;
-        max-width: 420px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .signup-form {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        align-items: center;
-      }
-
-      .signup-form input[type='email'] {
-        font-family: 'Cormorant Garamond', 'Georgia', serif;
-        font-style: italic;
-        font-size: 1.05rem;
-        color: var(--warm-dark);
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid var(--terracotta);
-        padding: 10px 4px;
-        width: 100%;
-        outline: none;
-        transition: border-color 0.3s ease;
-      }
-
-      .signup-form input[type='email']::placeholder {
-        color: var(--warm-dark);
-        opacity: 0.4;
-      }
-
-      .signup-form input[type='email']:focus {
-        border-bottom-color: var(--olive-green);
-      }
-
-      .signup-form button {
-        font-family: 'Cormorant Garamond', 'Georgia', serif;
-        font-weight: 600;
-        font-size: 0.85rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--cream);
-        background-color: var(--terracotta);
-        border: none;
-        padding: 12px 32px;
-        cursor: pointer;
-        transition:
-          background-color 0.3s ease,
-          transform 0.2s ease;
-        min-height: 44px;
-      }
-
-      .signup-form button:hover {
-        background-color: var(--olive-green);
-      }
-
-      .signup-form button:active {
-        transform: scale(0.97);
-      }
-
-      .form-success {
-        font-family: 'Cormorant Garamond', 'Georgia', serif;
-        font-style: italic;
-        font-size: 1.05rem;
-        color: var(--olive-green);
-        line-height: 1.6;
-        opacity: 0;
-        animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
-      }
-
-      .form-error {
-        font-family: 'Cormorant Garamond', 'Georgia', serif;
-        font-style: italic;
-        font-size: 0.95rem;
-        color: var(--terracotta);
-        margin-top: 12px;
-      }
-
-      /* ———— Footer ———— */
-      footer {
-        margin-top: 80px;
-        padding-top: 24px;
-        border-top: 1px solid var(--terracotta);
-        opacity: 0.55;
-        font-size: 0.85rem;
-        line-height: 1.8;
-      }
-
-      footer a {
-        color: var(--warm-dark);
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-      }
-
-      footer a:hover {
-        opacity: 0.7;
-      }
-
-      /* ———— Responsive: desktop ———— */
-      @media (min-width: 768px) {
-        .page {
-          padding: 80px 40px 60px;
+        .olive-art {
+          flex: 0 0 auto;
+          width: 100%;
         }
 
         .brand-name {
-          font-size: 3.4rem;
-          letter-spacing: 0.26em;
-          margin: 20px 0;
+          font-size: clamp(1.3rem, 6vw, 2.2rem);
+          letter-spacing: 0.15em;
+          margin-top: auto;
         }
 
-        .tagline {
-          font-size: 1.3rem;
+        .bottom-zone {
+          flex: 1;
         }
 
-        .star {
-          margin: 36px auto 40px;
-          font-size: 1.1rem;
+        .form-wrap {
+          margin-top: auto;
         }
 
-        .description {
-          font-size: 1.25rem;
-          margin-top: 88px;
-        }
-
-        .arriving-section {
-          margin-top: 88px;
+        .subtitle {
+          font-size: clamp(0.62rem, 2.6vw, 0.88rem);
         }
 
         .arriving {
-          font-size: 1.75rem;
+          font-size: clamp(0.78rem, 3vw, 1.05rem);
         }
 
         .signup-form {
-          flex-direction: row;
-          gap: 0;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
         }
 
         .signup-form input[type='email'] {
-          flex: 1;
-          font-size: 1.1rem;
+          width: clamp(170px, 55vw, 260px);
+          text-align: center;
+          font-size: clamp(0.82rem, 3.5vw, 1rem);
         }
 
         .signup-form button {
-          flex-shrink: 0;
-          margin-left: 16px;
-        }
-
-        footer {
-          margin-top: 100px;
+          font-size: clamp(0.62rem, 2.5vw, 0.78rem);
+          padding: 8px 22px;
         }
       }
 
-      /* Large desktop refinement */
-      @media (min-width: 1080px) {
-        .brand-name {
-          font-size: 3.8rem;
-        }
-      }
+      /* ——————————————————————————————————————
+         Reduced Motion
+         —————————————————————————————————————— */
 
-      /* Reduced motion */
       @media (prefers-reduced-motion: reduce) {
-        .reveal {
+        .tin,
+        .brand-name,
+        .olive-art,
+        .bottom-zone {
           animation: none;
           opacity: 1;
         }
-        .form-success {
-          animation: none;
-          opacity: 1;
+
+        .snackbar {
+          transition: none;
         }
       }
     </style>
   </head>
   <body>
-    <!-- SVG filter for background grain texture -->
-    <svg class="grain-svg" aria-hidden="true">
-      <filter id="grain">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.65"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-    </svg>
+    <div class="tin">
+      <!-- Pull-tab lives here (child of .tin, not .tin-label)
+           so it floats above all layers and is never clipped. -->
+      <div class="pull-tab">
+        <!-- ASSET: Pull-tab image. Swap filename here when replacing with WebP -->
+        <img src="pulltab.png" alt="Tin pull-tab" draggable="false" />
+      </div>
 
-    <main class="page">
-      <!-- ———— Hero / Above the Fold ———— -->
-      <header>
-        <hr class="rule reveal reveal-1" aria-hidden="true" />
-        <h1 class="brand-name reveal reveal-1">For The Hour</h1>
-        <hr class="rule reveal reveal-1" aria-hidden="true" />
-        <p class="tagline reveal reveal-2">
-          Single-varietal European olives. For the hour that matters.
-        </p>
-      </header>
+      <div class="tin-border">
+        <div class="tin-label">
+          <div class="label-content">
+            <h1 class="brand-name">For The Hour</h1>
 
-      <div class="star reveal reveal-2" aria-hidden="true">✦&ensp;✦&ensp;✦</div>
+            <div class="olive-art">
+              <!-- ASSET: Olive branch illustration. Swap filename here when replacing with WebP -->
+              <img
+                src="banner.png"
+                alt="Painterly olive branch illustration"
+                draggable="false"
+              />
+            </div>
 
-      <!-- HERO IMAGE: Update src to match your image filename -->
-      <img
-        src="hero.png"
-        alt="A gold tin of For The Hour Castelvetrano olives on a sun-warmed stone ledge, beside a vermouth cocktail and a small bowl of olives, with an Italian hilltop town in the soft golden-hour background."
-        class="hero-image reveal reveal-3"
-        width="1024"
-        height="512"
-      />
-
-      <!-- ———— Brand Description ———— -->
-      <p class="description reveal reveal-4">
-        For The Hour brings single-varietal European
-        olives&hairsp;&mdash;&hairsp;Castelvetrano, Gordal, Lucques,
-        Arbequina&hairsp;&mdash;&hairsp;to the American table in beautifully
-        designed tins. Inspired by the aperitivo tradition, each tin is sourced
-        from a single growing region and packed in small batches. This is the
-        olive, elevated.
-      </p>
-
-      <!-- ———— Arriving 2026 + Email Capture ———— -->
-      <section class="arriving-section reveal reveal-5">
-        <hr class="rule" aria-hidden="true" />
-        <p class="arriving">Arriving 2026</p>
-        <hr class="rule" aria-hidden="true" />
-
-        <div class="form-wrap" id="form-container">
-          <!-- FORMSPREE: Replace YOUR_FORM_ID with your Formspree form ID -->
-          <form
-            class="signup-form"
-            id="signup-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              required
-              autocomplete="email"
-              aria-label="Email address"
-            />
-            <button type="submit">Notify Me</button>
-          </form>
+            <div class="bottom-zone">
+              <p class="subtitle">Single-Varietal European Olives</p>
+              <p class="arriving">Arriving 2026</p>
+              <div class="form-wrap" id="form-container">
+                <!-- FORMSPREE: Replace YOUR_FORM_ID with your actual Formspree form ID -->
+                <form
+                  class="signup-form"
+                  id="signup-form"
+                  action="https://submit-form.com/cqNWcOvMU"
+                  method="POST"
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    autocomplete="email"
+                    aria-label="Email address"
+                  />
+                  <button type="submit">Join the List</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <!-- ———— Footer ———— -->
-      <footer class="reveal reveal-6">
-        <!-- CONTACT EMAIL: Update email address if desired -->
-        <p>
-          &copy; 2026 For The Hour&ensp;&middot;&ensp;<a
-            href="mailto:hello@forthehour.com"
-            >hello@forthehour.com</a
-          >
-        </p>
-      </footer>
-    </main>
+    <div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
 
     <script>
       (function () {
         var form = document.getElementById('signup-form');
-        var container = document.getElementById('form-container');
+        var snackbar = document.getElementById('snackbar');
+        var dismissTimer;
+
+        function showSnackbar(message, type) {
+          clearTimeout(dismissTimer);
+          snackbar.textContent = message;
+          snackbar.className = 'snackbar ' + type;
+
+          requestAnimationFrame(function () {
+            snackbar.classList.add('visible');
+          });
+
+          dismissTimer = setTimeout(function () {
+            snackbar.classList.remove('visible');
+          }, 4000);
+        }
 
         form.addEventListener('submit', function (e) {
           e.preventDefault();
@@ -493,21 +604,21 @@
           })
             .then(function (response) {
               if (response.ok) {
-                container.innerHTML =
-                  '<p class="form-success">You\u2019re on the list. We\u2019ll be in touch before the first tin ships.</p>';
+                form.reset();
+                showSnackbar(
+                  'You\u2019re on the list \u2014 we\u2019ll be in touch.',
+                  'success',
+                );
               } else {
                 throw new Error('Form submission failed');
               }
             })
             .catch(function () {
-              button.textContent = 'Notify Me';
+              showSnackbar('Something went wrong. Please try again.', 'error');
+            })
+            .finally(function () {
+              button.textContent = 'Join the List';
               button.disabled = false;
-              if (!container.querySelector('.form-error')) {
-                var err = document.createElement('p');
-                err.className = 'form-error';
-                err.textContent = 'Something went wrong. Please try again.';
-                form.appendChild(err);
-              }
             });
         });
       })();
