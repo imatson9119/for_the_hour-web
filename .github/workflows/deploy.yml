@@ -24,6 +24,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          BASE_PATH: '/for_the_hour-web'
 
       - name: Add .nojekyll
         run: touch build/.nojekyll
